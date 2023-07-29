@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import Widget from './components/Widget';
 
 import getStore from  './store';
+import { getChatId } from './store/dispatcher';
 
 import { AnyFunction } from './utils/types';
 
@@ -107,7 +108,7 @@ const defaultProps = {
   showCloseButton: true,
   fullScreenMode: false,
   autofocus: true,
-  chatId: 'rcw-chat-container',
+  chatId: getChatId(null),
   launcherOpenLabel: 'Open chat',
   launcherCloseLabel: 'Close chat',
   launcherOpenImg: '',
