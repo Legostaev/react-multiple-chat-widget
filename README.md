@@ -291,6 +291,4 @@ function MyApp() {
 
 ## About
 
-This project is maintained by [Martín Callegari](https://github.com/mcallegari10) and it was written by [Wolox](http://www.wolox.com.ar).
-
-![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
+This project has been inherited from react-chat-widget (https://github.com/Wolox/react-chat-widget). Additional functionality has been added by Veniamin Legostaev.
