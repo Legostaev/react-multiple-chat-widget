@@ -24,7 +24,7 @@ yarn add react-multiple-chat-widget
 
 ## Usage
 
-1- Add the Widget component to your root component
+1- Add the Widget component to your root component. Each chat must contain a unique chatId. If the chat IDs match, then such chats will show the same set of messages.
 
 ```js
 import React from 'react';
@@ -70,7 +70,8 @@ function App() {
 export default App;
 ```
 
-3- Import the methods for you to add messages in the Widget. (See [messages](#messages))
+3- Import the methods for you to add messages in the Widget. 
+To send messages to the chat, you must specify the chat identifier (chatId), otherwise the messages will be sent to the chat by default. (See [messages](#messages))
 
 ```js
 import React from 'react';
