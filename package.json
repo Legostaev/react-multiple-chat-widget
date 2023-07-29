@@ -1,6 +1,6 @@
 {
   "name": "react-multiple-chat-widget",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "Chat web widget for React apps",
   "main": "lib/index.js",
   "repository": "git@github.com:Legostaev/react-multiple-chat-widget.git",
@@ -19,15 +19,15 @@
     "javascript"
   ],
   "dependencies": {
-    "classnames": "^2.2.6",
-    "date-fns": "^2.11.1",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.30.0",
     "emoji-mart": "^3.0.1",
-    "markdown-it": "^8.4.1",
-    "markdown-it-link-attributes": "^2.1.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-sanitizer": "^0.4.3",
     "markdown-it-sup": "^1.0.0",
-    "react-redux": "^7.2.4",
-    "redux": "^4.1.0"
+    "react-redux": "^8.1.2",
+    "redux": "^4.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
