@@ -1,8 +1,6 @@
-# React Chat Widget
+# React Multiple Chat Widget
 [![circle-ci](https://img.shields.io/circleci/project/github/Wolox/react-chat-widget.svg)](https://circleci.com/gh/Wolox/react-chat-widget)
-[![npm](https://img.shields.io/npm/v/react-chat-widget.svg)](https://www.npmjs.com/package/react-chat-widget)
-
-[![FEArmy](./assets/FEA_open_source_sm.png)](https://github.com/orgs/Wolox/teams/front-end-army/members)
+[![npm](https://img.shields.io/npm/v/react-multiple-chat-widget.svg)](https://www.npmjs.com/package/react-multiple-chat-widget)
 
 ## Features
 
@@ -17,12 +15,12 @@
 
 #### npm
 ```bash
-npm install --save react-chat-widget
+npm install --save react-multiple-chat-widget
 ```
 
 #### yarn
 ```bash
-yarn add react-chat-widget
+yarn add react-multiple-chat-widget
 ```
 
 ## Usage
@@ -31,14 +29,14 @@ yarn add react-chat-widget
 
 ```js
 import React from 'react';
-import { Widget } from 'react-chat-widget';
+import { Widget } from 'react-multiple-chat-widget';
 
-import 'react-chat-widget/lib/styles.css';
+import 'react-multiple-chat-widget/lib/styles.css';
 
 function App() {
   return (
     <div className="App">
-      <Widget />
+      <Widget chatId="yourChatId" />
     </div>
   );
 }
@@ -50,7 +48,7 @@ export default App;
 
 ```js
 import React from 'react';
-import { Widget } from 'react-chat-widget';
+import { Widget } from 'react-multiple-chat-widget';
 
 import 'react-chat-widget/lib/styles.css';
 
@@ -63,6 +61,7 @@ function App() {
   return (
     <div className="App">
       <Widget
+        chatId="yourChatId"
         handleNewUserMessage={handleNewUserMessage}
       />
     </div>
@@ -76,24 +75,25 @@ export default App;
 
 ```js
 import React from 'react';
-import { Widget, addResponseMessage } from 'react-chat-widget';
+import { Widget, addResponseMessage } from 'react-multiple-chat-widget';
 
-import 'react-chat-widget/lib/styles.css';
+import 'react-multiple-chat-widget/lib/styles.css';
 
 function App() {
   useEffect(() => {
-    addResponseMessage('Welcome to this awesome chat!');
+    addResponseMessage("yourChatId", 'Welcome to this awesome chat!');
   }, []);
 
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
-    addResponseMessage(response);
+    addResponseMessage("yourChatId", response);
   };
 
   return (
     <div className="App">
       <Widget
+        chatId="yourChatId"
         handleNewUserMessage={handleNewUserMessage}
       />
     </div>
@@ -107,15 +107,15 @@ export default App;
 
 ```js
 import React, { useEffect } from 'react';
-import { Widget, addResponseMessage } from 'react-chat-widget';
+import { Widget, addResponseMessage } from 'react-multiple-chat-widget';
 
-import 'react-chat-widget/lib/styles.css';
+import 'react-multiple-chat-widget/lib/styles.css';
 
 import logo from './logo.svg';
 
 function App() {
   useEffect(() => {
-    addResponseMessage('Welcome to this **awesome** chat!');
+    addResponseMessage('yourChatId', 'Welcome to this **awesome** chat!');
   }, []);
 
   const handleNewUserMessage = (newMessage) => {
@@ -126,6 +126,7 @@ function App() {
     return (
       <div className="App">
         <Widget
+          chatId="yourChatId"
           handleNewUserMessage={handleNewUserMessage}
           profileAvatar={logo}
           title="My new awesome title"
@@ -268,17 +269,18 @@ You can use a custom component for the Launcher if you need one that's not the d
 
 ```js
 import React from 'react';
-import { Widget } from 'react-chat-widget';
+import { Widget } from 'react-multiple-chat-widget';
 
 ...
 
 function MyApp() {
   const getCustomLauncher = (handleToggle) =>
-    <button onClick={handleToggle}>This is my launcher component!</button>
+    <button onClick={handleToggle('yourChatId')}>This is my launcher component!</button>
 
   return (
     <Widget
       ...
+      chatId="yourChatId"
       launcher={handleToggle => getCustomLauncher(handleToggle)}
     />
   )
