@@ -1,5 +1,5 @@
 # React Multiple Chat Widget
-[![circle-ci](https://img.shields.io/circleci/project/github/Wolox/react-chat-widget.svg)](https://circleci.com/gh/Wolox/react-chat-widget)
+[![circle-ci](https://img.shields.io/circleci/project/github/Legostaev/react-multiple-chat-widget.svg)](https://circleci.com/gh/Legostaev/react-multiple-chat-widget)
 [![npm](https://img.shields.io/npm/v/react-multiple-chat-widget.svg)](https://www.npmjs.com/package/react-multiple-chat-widget)
 
 ## Features
