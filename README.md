@@ -24,7 +24,7 @@ yarn add react-multiple-chat-widget
 
 ## Usage
 
-1- Add the Widget component to your root component. Each chat must contain a unique chatId. If the chat IDs match, then such chats will show the same set of messages.
+1. Add the Widget component to your root component. Each chat must contain a unique chatId. If the chat IDs match, then such chats will show the same set of messages.
 
 ```js
 import React from 'react';
@@ -43,7 +43,7 @@ function App() {
 export default App;
 ```
 
-2- The only required prop you need to use is the `handleNewUserMessage`, which will receive the input from the user.
+2. The only required prop you need to use is the `handleNewUserMessage`, which will receive the input from the user.
 
 ```js
 import React from 'react';
@@ -70,7 +70,7 @@ function App() {
 export default App;
 ```
 
-3- Import the methods for you to add messages in the Widget. 
+3. Import the methods for you to add messages in the Widget. 
 To send messages to the chat, you must specify the chat identifier (chatId), otherwise the messages will be sent to the chat by default. By default, the chat has the id 'rcw-chat-container'. (See [messages](#messages))
 
 ```js
@@ -103,7 +103,7 @@ function App() {
 export default App;
 ```
 
-4- Customize the widget to match your app design! You can add both props to manage the title of the widget and the avatar it will use. Of course, feel free to change the styles the widget will have in the CSS
+4. Customize the widget to match your app design! You can add both props to manage the title of the widget and the avatar it will use. Of course, feel free to change the styles the widget will have in the CSS
 
 ```js
 import React, { useEffect } from 'react';
