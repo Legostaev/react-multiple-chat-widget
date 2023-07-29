@@ -3,8 +3,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './index.js',
@@ -99,7 +99,7 @@ module.exports = {
         amd: 'react-dom'
     }
   },
-  optimization: {
+/*  optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
@@ -107,5 +107,5 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
-  }
+  } */
 };
