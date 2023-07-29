@@ -71,7 +71,7 @@ export default App;
 ```
 
 3- Import the methods for you to add messages in the Widget. 
-To send messages to the chat, you must specify the chat identifier (chatId), otherwise the messages will be sent to the chat by default. (See [messages](#messages))
+To send messages to the chat, you must specify the chat identifier (chatId), otherwise the messages will be sent to the chat by default. By default, the chat has the id 'rcw-chat-container'. (See [messages](#messages))
 
 ```js
 import React from 'react';
