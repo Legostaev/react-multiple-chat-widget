@@ -50,7 +50,7 @@ export default App;
 import React from 'react';
 import { Widget } from 'react-multiple-chat-widget';
 
-import 'react-chat-widget/lib/styles.css';
+import 'react-multiple-chat-widget/lib/styles.css';
 
 function App() {
   const handleNewUserMessage = (newMessage) => {
