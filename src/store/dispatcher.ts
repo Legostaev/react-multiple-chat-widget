@@ -1,65 +1,65 @@
 import { ElementType } from 'react';
 
-import store from '.';
+import getStore from '.';
 import * as actions from './actions';
 import { LinkParams, ImageState } from './types';
 
-export function addUserMessage(text: string, id?: string) {
-  store.dispatch(actions.addUserMessage(text, id));
+export function addUserMessage(chatId: string, text: string, id?: string) {
+  getStore(chatId).dispatch(actions.addUserMessage(text, id));
 }
 
-export function addResponseMessage(text: string, id?: string) {
-  store.dispatch(actions.addResponseMessage(text, id));
+export function addResponseMessage(chatId: string, text: string, id?: string) {
+  getStore(chatId).dispatch(actions.addResponseMessage(text, id));
 }
 
-export function addLinkSnippet(link: LinkParams, id?: string) {
-  store.dispatch(actions.addLinkSnippet(link, id));
+export function addLinkSnippet(chatId: string, link: LinkParams, id?: string) {
+  getStore(chatId).dispatch(actions.addLinkSnippet(link, id));
 }
 
-export function toggleMsgLoader() {
-  store.dispatch(actions.toggleMsgLoader());
+export function toggleMsgLoader(chatId: string) {
+  getStore(chatId).dispatch(actions.toggleMsgLoader());
 }
 
-export function renderCustomComponent(component: ElementType, props: any, showAvatar = false, id?: string) {
-  store.dispatch(actions.renderCustomComponent(component, props, showAvatar, id));
+export function renderCustomComponent(chatId: string, component: ElementType, props: any, showAvatar = false, id?: string) {
+  getStore(chatId).dispatch(actions.renderCustomComponent(component, props, showAvatar, id));
 }
 
-export function toggleWidget() {
-  store.dispatch(actions.toggleChat());
+export function toggleWidget(chatId: string) {
+  getStore(chatId).dispatch(actions.toggleChat());
 }
 
-export function toggleInputDisabled() {
-  store.dispatch(actions.toggleInputDisabled());
+export function toggleInputDisabled(chatId: string) {
+  getStore(chatId).dispatch(actions.toggleInputDisabled());
 }
 
-export function dropMessages() {
-  store.dispatch(actions.dropMessages());
+export function dropMessages(chatId: string) {
+  getStore(chatId).dispatch(actions.dropMessages());
 }
 
-export function isWidgetOpened(): boolean {
-  return store.getState().behavior.showChat;
+export function isWidgetOpened(chatId: string): boolean {
+  return getStore(chatId).getState().behavior.showChat;
 }
 
-export function setQuickButtons(buttons: Array<{ label: string, value: string | number }>) {
-  store.dispatch(actions.setQuickButtons(buttons));
+export function setQuickButtons(chatId: string, buttons: Array<{ label: string, value: string | number }>) {
+  getStore(chatId).dispatch(actions.setQuickButtons(buttons));
 }
 
-export function deleteMessages(count: number, id?: string) {
-  store.dispatch(actions.deleteMessages(count, id));
+export function deleteMessages(chatId: string, count: number, id?: string) {
+  getStore(chatId).dispatch(actions.deleteMessages(count, id));
 }
 
-export function markAllAsRead() {
-  store.dispatch(actions.markAllMessagesRead());
+export function markAllAsRead(chatId: string) {
+  getStore(chatId).dispatch(actions.markAllMessagesRead());
 }
 
-export function setBadgeCount(count: number) {
-  store.dispatch(actions.setBadgeCount(count));
+export function setBadgeCount(chatId: string, count: number) {
+  getStore(chatId).dispatch(actions.setBadgeCount(count));
 }
 
-export function openFullscreenPreview(payload: ImageState) {
-  store.dispatch(actions.openFullscreenPreview(payload));
+export function openFullscreenPreview(chatId: string, payload: ImageState) {
+  getStore(chatId).dispatch(actions.openFullscreenPreview(payload));
 }
 
-export function closeFullscreenPreview() {
-  store.dispatch(actions.closeFullscreenPreview());
+export function closeFullscreenPreview(chatId: string) {
+  getStore(chatId).dispatch(actions.closeFullscreenPreview());
 }

@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 
 import Widget from './components/Widget';
 
-import store from  './store';
+import getStore from  './store';
 
 import { AnyFunction } from './utils/types';
 
@@ -66,7 +66,7 @@ function ConnectedWidget({
   emojis
 }: Props) {
   return (
-    <Provider store={store}>
+    <Provider store={getStore(chatId)}>
       <Widget
         title={title}
         titleAvatar={titleAvatar}
