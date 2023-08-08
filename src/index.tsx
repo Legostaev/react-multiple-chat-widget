@@ -5,10 +5,10 @@ import Widget from './components/Widget';
 import getStore from  './store';
 import { getChatId } from './store/dispatcher';
 
-import { AnyFunction } from './utils/types';
+import { AnyFunction, MessageFunction } from './utils/types';
 
 type Props = {
-  handleNewUserMessage: AnyFunction;
+  handleNewUserMessage: MessageFunction;
   handleQuickButtonClicked?: AnyFunction;
   title?: string;
   titleAvatar?: string;

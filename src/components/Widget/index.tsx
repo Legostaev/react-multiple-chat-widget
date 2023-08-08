@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { toggleChat, addUserMessage } from '../../store/actions';
 import { isWidgetOpened } from '../../store/dispatcher';
-import { AnyFunction } from '../../utils/types';
+import { AnyFunction, MessageFunction } from '../../utils/types';
 
 import WidgetLayout from './layout';
 
@@ -17,7 +17,7 @@ type Props = {
   fullScreenMode: boolean;
   autofocus: boolean;
   customLauncher?: AnyFunction;
-  handleNewUserMessage: AnyFunction;
+  handleNewUserMessage: MessageFunction;
   handleQuickButtonClicked?: AnyFunction;
   handleTextInputChange?: (event: any) => void;
   chatId: string;
@@ -78,8 +78,11 @@ function Widget({
     }
 
     handleSubmit?.(userInput);
-    dispatch(addUserMessage(userInput));
-    handleNewUserMessage(userInput);
+    handleNewUserMessage(userInput).then((result) => {
+      if (result) {
+        dispatch(addUserMessage(userInput));
+      }
+    }).catch((e)=> {}); 
   }
 
   const onQuickButtonClicked = (event, value) => {
